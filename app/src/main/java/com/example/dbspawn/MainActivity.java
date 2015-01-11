@@ -3,16 +3,12 @@ package com.example.dbspawn;
 import android.app.ListActivity;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteQueryBuilder;
-import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+
 import android.widget.ListAdapter;
 import android.widget.SimpleCursorAdapter;
 
@@ -22,32 +18,50 @@ import java.util.ArrayList;
 
 public class MainActivity extends ListActivity {
 
-    private Cursor employees;
+//    declarando variable del tipo cursor llamada lentes
+
+    private Cursor lentes;
+
+//    declarando variable llamado db del tipo myDataBase
     private myDataBase db;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+//        Inicializando objeto db del tip myDataBase, recordando que la superclase es SQLiteAssetHelper
+
         db = new myDataBase(this);
-        employees = db.getene15t(); // you would not typically call this on the main thread
+
+//        al cursor lentes se le esta pasando el objeto db y estamos ejecutando el metodo robotillodebusqueda
+//        que no es otra cosa que un metodo de cursor con query builder, asi que lentes practicamente
+//        es el SQLAssetHelper db donde ya ejecuto el robot de busqueda cargado y listo para mostrar
+
+        lentes = db.robotillodebusqueda(); // you would not typically call this on the main thread
 
 
+//preparando el widget adaptador del tipo ListAdapter, este widet sera SimpleCursorAdapter (subclase de listadapter),
+// este paquete es para mostrar UI en la pantalla asi que preparados
+//aqui aparecera el texto, este es el puente entre el ListView xml y la base de datos almacenada en el cursor
+// este ya viene cargado y con ganas de soltarlo en el cursor lentes (este es el cursor)
 
+//contexto del simplecursoradapter es aqui, el layour a usar este sera el listview,
+// el cursor lentes, el string desde donde mostrar, para este caso la columna a mostrar,
+//el textview a mostrar osea donde se pega la informacion que trae el cursor
 
-        ListAdapter adapter = new SimpleCursorAdapter(this,
+        ListAdapter adaptador = new SimpleCursorAdapter(this,
                 android.R.layout.simple_list_item_1,
-                employees,
-                new String[] {"COMENTARIO"},
+                lentes,
+                new String[] {"REFERENCIA"},
                 new int[] {android.R.id.text1});
 
-        getListView().setAdapter(adapter);
+        getListView().setAdapter(adaptador);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        employees.close();
+        lentes.close();
         db.close();
     }
 
