@@ -1,7 +1,7 @@
 package com.example.dbspawn;
 
 import android.app.ListActivity;
-import android.content.Context;
+
 import android.database.Cursor;
 
 import android.os.Bundle;

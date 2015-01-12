@@ -6,11 +6,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-    <!-- Defining where should text be placed. You set you text color here-->
+
     <TextView
         android:id="@+id/texto_listado"
         android:textColor="@color/colorletra"
-        android:background="@color/transparente"
+        android:background="@color/colorfondo"
+        android:textSize="32sp"
         android:gravity="center"
         android:text="sample"
         android:layout_margin="4dip"
@@ -21,7 +22,8 @@
     <TextView
         android:id="@+id/texto_listado2"
         android:textColor="@color/colorletra"
-        android:background="@color/transparente"
+        android:background="@color/colorfondo"
+        android:textSize="32sp"
         android:gravity="left"
         android:text="sample"
         android:layout_margin="4dip"
@@ -32,7 +34,8 @@
     <TextView
         android:id="@+id/texto_listado3"
         android:textColor="@color/colorletra"
-        android:background="@color/transparente"
+        android:background="@color/colorfondo"
+        android:textSize="32sp"
         android:gravity="left"
         android:text="sample"
         android:layout_margin="4dip"
