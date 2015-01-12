@@ -26,7 +26,8 @@ public class myDataBase extends SQLiteAssetHelper {
 //    Adentro se crea el metodo llamado myDataBase que para este caso es el nombre de la clase
 //    este lo invocamos en el mainactivity, debdio a que la clase myDataBase es subclae de SQLiteAssetHelper
 //    se nota que el metodo tiene la forma de un SQLiteOpenHelper (administra las bases de datos)
-//    aqui le damos identidad al myDataBase, indicandoles el nombre de la base de datos y la version
+//    aqui le damos identidad al myDataBase, esto es importante para la clase SQLiteAssetHelper
+// indicandoles el nombre de la base de datos y la version
 
     public myDataBase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -83,7 +84,7 @@ public class myDataBase extends SQLiteAssetHelper {
 //  el cual indicaria que filas devolver, MODIFICA ESTE PARA QUE DEVUELVA SOLO EL DIA DESEADO, para este caso es null osea todas
 
 
-// , groupBy (es un groupby de language sql) null indica que no sea agrupen las filas
+// , groupBy (es un groupby de language sql) null indica que no se agrupen las filas
 // , having es todos los grupos incluidos al ser null,
 // sortOrder null es que no los ordene adicionalmente, osea tal como estan los datos
 // , limit se ha dejado null osea sin limite, este es para limitar el numero de filas a mostrar

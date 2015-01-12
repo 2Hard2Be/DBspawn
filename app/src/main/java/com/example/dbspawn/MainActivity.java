@@ -49,13 +49,15 @@ public class MainActivity extends ListActivity {
 // el cursor lentes, el string desde donde mostrar, para este caso la columna a mostrar,
 //el textview a mostrar osea donde se pega la informacion que trae el cursor
 
-        ListAdapter adaptador = new SimpleCursorAdapter(this,
-                android.R.layout.simple_list_item_1,
+        ListAdapter adaptador1 = new SimpleCursorAdapter(this,
+                R.layout.texto_listado,
                 lentes,
-                new String[] {"REFERENCIA"},
-                new int[] {android.R.id.text1});
+                new String[] {"TEXTO", "COMENTARIO","REFERENCIA" },
+                new int[] {R.id.texto_listado,R.id.texto_listado2,R.id.texto_listado3});
 
-        getListView().setAdapter(adaptador);
+        getListView().setAdapter(adaptador1);
+
+
     }
 
     @Override
