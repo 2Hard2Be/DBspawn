@@ -9,12 +9,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.SimpleCursorAdapter;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
+
+
 
 public class MainActivity extends ListActivity {
 
@@ -49,13 +53,19 @@ public class MainActivity extends ListActivity {
 // el cursor lentes, el string desde donde mostrar, para este caso la columna a mostrar,
 //el textview a mostrar osea donde se pega la informacion que trae el cursor
 
-        ListAdapter adaptador1 = new SimpleCursorAdapter(this,
-                R.layout.texto_listado,
-                lentes,
-                new String[] {"TEXTO", "COMENTARIO","REFERENCIA" },
-                new int[] {R.id.texto_listado,R.id.texto_listado2,R.id.texto_listado3});
+        String texto = lentes.getString(1);
+        String coment = lentes.getString(2);
+        String referen = lentes.getString(3);
 
-        getListView().setAdapter(adaptador1);
+
+
+
+        // Decompose unicode characters
+        String comentbueno = sintildes.chulon(coment);
+
+String[] eltextodehoy = {texto,comentbueno,referen};
+
+        setListAdapter(new ArrayAdapter<String>(this,R.layout.texto_listado,R.id.texto_listado,eltextodehoy));
 
 
     }
