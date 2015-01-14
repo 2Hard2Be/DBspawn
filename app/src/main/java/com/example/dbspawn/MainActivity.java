@@ -49,21 +49,27 @@ public class MainActivity extends ListActivity {
 //aqui aparecera el texto, este es el puente entre el ListView xml y la base de datos almacenada en el cursor
 // este ya viene cargado y con ganas de soltarlo en el cursor lentes (este es el cursor)
 
-//contexto del simplecursoradapter es aqui, el layour a usar este sera el listview,
-// el cursor lentes, el string desde donde mostrar, para este caso la columna a mostrar,
-//el textview a mostrar osea donde se pega la informacion que trae el cursor
+//sacando del cursor lentes los textos, los numeros son las columnas del cursor
 
-        String texto = lentes.getString(1);
-        String coment = lentes.getString(2);
-        String referen = lentes.getString(3);
+        String fecha = lentes.getString(1);
+        String texto = lentes.getString(2);
+        String coment = lentes.getString(3);
+        String referen = lentes.getString(4);
+        String url = lentes.getString(5);
+        String imagen = lentes.getString(6);
+        String portada = lentes.getString(7);
 
 
 
+//Le pasamos la clase creada llamada sintildes la cual tiene el metodo que hemos llamado coloquialmente
+//liquidpaper pues quita los simbolos extra;os
 
-        // Decompose unicode characters
-        String comentbueno = sintildes.chulon(coment);
 
-String[] eltextodehoy = {texto,comentbueno,referen};
+
+        String comentbueno = sintildes.liquidpaper(coment);
+        String textobueno = sintildes.liquidpaper(texto);
+
+String[] eltextodehoy = {fecha,textobueno,comentbueno,referen,url,imagen,portada};
 
         setListAdapter(new ArrayAdapter<String>(this,R.layout.texto_listado,R.id.texto_listado,eltextodehoy));
 

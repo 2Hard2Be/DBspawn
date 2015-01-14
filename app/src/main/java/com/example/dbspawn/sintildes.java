@@ -7,7 +7,7 @@ package com.example.dbspawn;
 
 public class sintildes {
 
-    public static String chulon(String s) {
+    public static String liquidpaper(String s) {
 
 
         s = s.replaceAll("[èéêë]","e");
@@ -22,10 +22,12 @@ public class sintildes {
         s = s.replaceAll("[ÀÂ]","A");
         s = s.replaceAll("[¤]","ñ");
         s = s.replaceAll("[ ]","a");
+//        este es el mas yuca de los statements quita characteres invisibles o puntos de codigo sin usar
+//        hemos visto que estos corresponden a las "e" en el examinando
         s = s.replaceAll("[\\p{C}]","e");
 
 
         return s;
-        // output : E,E,E,E,U,U,I,I,A,A,O,e,e,e,e,u,u,i,i,a,a,o
+
     }
 }

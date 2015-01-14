@@ -65,13 +65,16 @@ public class myDataBase extends SQLiteAssetHelper {
 //        que no se debe usar muchas columnas si no las vas a ocupar (para esta app todas se usan :))
 
 
-        String[] sqlSelect = {"_id", "TEXTO", "COMENTARIO", "REFERENCIA"};
+        String[] sqlSelect = {"_id","FECHA","TEXTO","COMENTARIO","REFERENCIA","URL","IMAGEN","PORTADA"};
 
         //        sqltables es una variable string donde va el nombre de la tabla a query este sera pasado
 //        al QueryBuilder, UNA OPTIMIZACION AQUI PUDIERA SER OCUPAR UN SWITCH BOARD donde se asigne
 //        el nombre del mes correcto
 
-        String sqlTables = "enero";
+//        el dia de donde buscar en la tabla
+        int day = 1;
+        String sqlTables = "enero2";
+        String dia = "_id="+day;
 
 //        AQUI TERMINARA EL SWITCHBOARD QUE LE COLOCARAS
 
@@ -94,7 +97,7 @@ public class myDataBase extends SQLiteAssetHelper {
 // , limit se ha dejado null osea sin limite, este es para limitar el numero de filas a mostrar
 
 
-        Cursor c = qb.query(db, sqlSelect, null, null,
+        Cursor c = qb.query(db, sqlSelect, dia, null,
                 null, null, null);
 
 //        al terminar la busqueda retorna el cursor a la primera fila de nuevo
