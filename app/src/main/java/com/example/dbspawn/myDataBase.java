@@ -13,9 +13,13 @@ import android.widget.SimpleCursorAdapter;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.text.Normalizer;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.regex.Pattern;
 
 //Creating SQliteAssetHelper class (que es subclase de SQliteOpenHelper, llamada myDataBase)
+
+
 
 
 public class myDataBase extends SQLiteAssetHelper {
@@ -24,8 +28,12 @@ public class myDataBase extends SQLiteAssetHelper {
 //    Sqliteopenhelper y assethelper dento de los parametros, lo mismo que la version de la
 //    base de datos
 
+
+
     private static final String DATABASE_NAME = "EED15";
     private static final int DATABASE_VERSION = 1;
+
+
 
 //    Adentro se crea el metodo llamado myDataBase que para este caso es el nombre de la clase
 //    este lo invocamos en el mainactivity, debdio a que la clase myDataBase es subclae de SQLiteAssetHelper
@@ -72,11 +80,19 @@ public class myDataBase extends SQLiteAssetHelper {
 //        el nombre del mes correcto
 
 //        el dia de donde buscar en la tabla
-        int day = 1;
-        String sqlTables = "enero2";
+
+
+        Calendar ahorita = Calendar.getInstance();
+
+        int day = ahorita.get(Calendar.DATE);
+
+        String mes = ahorita.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+
+
+        String sqlTables =mes;
         String dia = "_id="+day;
 
-//        AQUI TERMINARA EL SWITCHBOARD QUE LE COLOCARAS
+
 
 //seteando que se busque en la tabla guardada en sqlTables
 

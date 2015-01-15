@@ -12,7 +12,7 @@
         android:textColor="@color/colorletra"
         android:background="@color/colorfondo"
         android:textSize="32sp"
-        android:gravity="center"
+        android:gravity="left"
         android:text="sample"
         android:layout_margin="4dip"
         android:layout_width="fill_parent"
