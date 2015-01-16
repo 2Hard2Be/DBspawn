@@ -69,7 +69,7 @@ public class MainActivity extends ListActivity {
         String comentbueno = sintildes.liquidpaper(coment);
         String textobueno = sintildes.liquidpaper(texto);
 
-String[] eltextodehoy = {fecha,textobueno,comentbueno,referen,url,imagen,portada};
+String[] eltextodehoy = {fecha,textobueno,comentbueno,referen};
 
         setListAdapter(new ArrayAdapter<String>(this,R.layout.texto_listado,R.id.texto_listado,eltextodehoy));
 
