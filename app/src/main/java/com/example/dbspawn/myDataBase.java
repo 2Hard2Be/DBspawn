@@ -73,7 +73,7 @@ public class myDataBase extends SQLiteAssetHelper {
 //        que no se debe usar muchas columnas si no las vas a ocupar (para esta app todas se usan :))
 
 
-        String[] sqlSelect = {"_id","FECHA","TEXTO","COMENTARIO","REFERENCIA","URL","IMAGEN","PORTADA"};
+        String[] sqlSelect = {"_id","FECHA","TEXTO","COMENTARIO","REFERENCIA"};
 
         //        sqltables es una variable string donde va el nombre de la tabla a query este sera pasado
 //        al QueryBuilder, UNA OPTIMIZACION AQUI PUDIERA SER OCUPAR UN SWITCH BOARD donde se asigne

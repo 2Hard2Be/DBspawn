@@ -2,25 +2,34 @@ package com.example.dbspawn;
 
 import android.app.ListActivity;
 
+
 import android.database.Cursor;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.SimpleCursorAdapter;
 
-import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
+import android.widget.ImageView;
 
-import java.text.Normalizer;
-import java.util.ArrayList;
-
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class MainActivity extends ListActivity {
+
+
+
+
 
 //    declarando variable del tipo cursor llamada lentes
 
@@ -28,6 +37,11 @@ public class MainActivity extends ListActivity {
 
 //    declarando variable llamado db del tipo myDataBase
     private myDataBase db;
+
+
+//    Las variables para ver la imagen correcta y el cargador
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,10 +69,6 @@ public class MainActivity extends ListActivity {
         String texto = lentes.getString(2);
         String coment = lentes.getString(3);
         String referen = lentes.getString(4);
-        String url = lentes.getString(5);
-        String imagen = lentes.getString(6);
-        String portada = lentes.getString(7);
-
 
 
 //Le pasamos la clase creada llamada sintildes la cual tiene el metodo que hemos llamado coloquialmente
@@ -66,12 +76,15 @@ public class MainActivity extends ListActivity {
 
 
 
-        String comentbueno = sintildes.liquidpaper(coment);
-        String textobueno = sintildes.liquidpaper(texto);
 
-String[] eltextodehoy = {fecha,textobueno,comentbueno,referen};
+            String textobueno = sintildes.liquidpaper(texto);
+            String referenbuena = sintildes.liquidpaper(referen);
+            String comentbueno = sintildes.liquidpaper(coment);
 
-        setListAdapter(new ArrayAdapter<String>(this,R.layout.texto_listado,R.id.texto_listado,eltextodehoy));
+            String[] eltextodehoy = {fecha, textobueno, comentbueno, referenbuena};
+
+            setListAdapter(new ArrayAdapter<String>(this, R.layout.texto_listado, R.id.texto_listado, eltextodehoy));
+
 
 
     }
