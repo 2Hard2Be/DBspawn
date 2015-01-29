@@ -7,15 +7,37 @@
     tools:context=".MainActivity"
     android:orientation="horizontal">
 
+    <RelativeLayout
+        android:id="@+id/textos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/imagenes"
 
+        >
+
+
+        <ListView
+            android:id="@+id/list2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorfondo"
+            android:layout_weight="1"
+            android:drawSelectorOnTop="false"/>
+
+
+
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/imagenes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:paddingTop="10dp"
-        android:layout_below="@+id/textos"
+
         >
 
 
@@ -26,32 +48,11 @@
         android:layout_height="wrap_content"
         android:background="@color/colorfondo"
         android:layout_weight="1"
-        android:drawSelectorOnTop="false"></ListView>
+        android:drawSelectorOnTop="false"/>
 
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/textos"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="10dp"
 
-        >
-
-
-    <ListView
-        android:id="@+id/list2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorfondo"
-        android:layout_weight="1"
-        android:drawSelectorOnTop="false"></ListView>
-
-
-
-
-    </RelativeLayout>
 
 </RelativeLayout>
