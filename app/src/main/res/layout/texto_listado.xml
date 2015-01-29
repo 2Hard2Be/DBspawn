@@ -7,6 +7,8 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
+
+
     <TextView
         android:id="@+id/texto_listado"
         android:textColor="@color/colorletra"

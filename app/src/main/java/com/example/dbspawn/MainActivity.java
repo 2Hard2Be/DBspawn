@@ -1,5 +1,6 @@
 package com.example.dbspawn;
 
+import android.app.Activity;
 import android.app.ListActivity;
 
 
@@ -15,9 +16,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -25,7 +30,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends Activity {
 
 
 
@@ -46,6 +51,7 @@ public class MainActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
 //        Inicializando objeto db del tip myDataBase, recordando que la superclase es SQLiteAssetHelper
 
@@ -81,9 +87,17 @@ public class MainActivity extends ListActivity {
             String referenbuena = sintildes.liquidpaper(referen);
             String comentbueno = sintildes.liquidpaper(coment);
 
-            String[] eltextodehoy = {fecha, textobueno, comentbueno, referenbuena};
+            final String[] eltextodehoy = {fecha, textobueno, comentbueno, referenbuena};
 
-            setListAdapter(new ArrayAdapter<String>(this, R.layout.texto_listado, R.id.texto_listado, eltextodehoy));
+        Integer [] imageId = {R.drawable.test2};
+
+        CustomList adapter = new CustomList(MainActivity.this, imageId);
+        ListView list = (ListView)findViewById(R.id.list);
+        list.setAdapter(adapter);
+
+CustomList2 adaptador2 = new CustomList2(MainActivity.this,eltextodehoy);
+        ListView list2 = (ListView)findViewById(R.id.list2);
+        list2.setAdapter(adaptador2);
 
 
 

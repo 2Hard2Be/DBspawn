@@ -1,6 +1,6 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
 
     android:background="@null"
@@ -9,8 +9,40 @@
 
 
 
+    <RelativeLayout
+        android:id="@+id/imagenes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/textos"
+        >
+
+
+
     <ListView
-        android:id="@id/android:list"
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorfondo"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="false"></ListView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/textos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+
+        >
+
+
+    <ListView
+        android:id="@+id/list2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorfondo"
@@ -18,8 +50,8 @@
         android:drawSelectorOnTop="false"></ListView>
 
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
 
-</FrameLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
