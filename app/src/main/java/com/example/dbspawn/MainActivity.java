@@ -26,6 +26,8 @@ import android.widget.Toast;
 
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -87,9 +89,34 @@ public class MainActivity extends Activity {
             String referenbuena = sintildes.liquidpaper(referen);
             String comentbueno = sintildes.liquidpaper(coment);
 
+        char ref1[] = new char[12];
+        referenbuena.getChars(0,11,ref1,0);
+        int i;
+        for (i=0; i < ref1.length; i++ ) {
+
+            if (ref1[i] == ':') {
+                ref1[i] = 'x';
+            }
+            if (ref1[i] == ' ') {
+                ref1[i] = '_';
+            }
+
+
+        }
+
+
+        StringBuilder referen1 = new StringBuilder();
+       referen1.append(ref1[0]).append(ref1[1]).append(ref1[2]).append(ref1[3]).append(ref1[4]).append(ref1[5]).append(ref1[7])
+               .append(ref1[8]).append(ref1[9]).append(ref1[10]).toString();
+
+        String referen2 = referen1.toString();
+
+
+       int imagen = getResources().getIdentifier(referen2, "drawable", getPackageName());
+
             final String[] eltextodehoy = {fecha, textobueno, comentbueno, referenbuena};
 
-        Integer [] imageId = {R.drawable.test2};
+        Integer [] imageId = {imagen};
 
         CustomList adapter = new CustomList(MainActivity.this, imageId);
         ListView list = (ListView)findViewById(R.id.list);
@@ -98,7 +125,6 @@ public class MainActivity extends Activity {
 CustomList2 adaptador2 = new CustomList2(MainActivity.this,eltextodehoy);
         ListView list2 = (ListView)findViewById(R.id.list2);
         list2.setAdapter(adaptador2);
-
 
 
     }

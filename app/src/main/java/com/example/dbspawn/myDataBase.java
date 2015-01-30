@@ -117,6 +117,8 @@ public class myDataBase extends SQLiteAssetHelper {
                 null, null, null);
 
 //        al terminar la busqueda retorna el cursor a la primera fila de nuevo
+
+        
         c.moveToFirst();
 
 
