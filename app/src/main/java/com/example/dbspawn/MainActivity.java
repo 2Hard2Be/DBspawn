@@ -73,6 +73,8 @@ public class MainActivity extends Activity {
 
 //sacando del cursor lentes los textos, los numeros son las columnas del cursor
 
+    if (lentes != null && lentes.moveToFirst()) {
+
         String fecha = lentes.getString(1);
         String texto = lentes.getString(2);
         String coment = lentes.getString(3);
@@ -83,16 +85,14 @@ public class MainActivity extends Activity {
 //liquidpaper pues quita los simbolos extra;os
 
 
-
-
-            String textobueno = sintildes.liquidpaper(texto);
-            String referenbuena = sintildes.liquidpaper(referen);
-            String comentbueno = sintildes.liquidpaper(coment);
+        String textobueno = sintildes.liquidpaper(texto);
+        String referenbuena = sintildes.liquidpaper(referen);
+        String comentbueno = sintildes.liquidpaper(coment);
 
         char ref1[] = new char[12];
-        referenbuena.getChars(0,11,ref1,0);
+        referenbuena.getChars(0, 11, ref1, 0);
         int i;
-        for (i=0; i < ref1.length; i++ ) {
+        for (i = 0; i < ref1.length; i++) {
 
             if (ref1[i] == ':') {
                 ref1[i] = 'x';
@@ -106,27 +106,27 @@ public class MainActivity extends Activity {
 
 
         StringBuilder referen1 = new StringBuilder();
-       referen1.append(ref1[0]).append(ref1[1]).append(ref1[2]).append(ref1[3]).append(ref1[4]).append(ref1[5]).append(ref1[7])
-               .append(ref1[8]).append(ref1[9]).append(ref1[10]).toString();
+        referen1.append(ref1[0]).append(ref1[1]).append(ref1[2]).append(ref1[3]).append(ref1[4]).append(ref1[5]).append(ref1[7])
+                .append(ref1[8]).append(ref1[9]).append(ref1[10]).toString();
 
         String referen2 = referen1.toString();
 
 
-       int imagen = getResources().getIdentifier(referen2, "drawable", getPackageName());
+        int imagen = getResources().getIdentifier(referen2, "drawable", getPackageName());
 
-            final String[] eltextodehoy = {fecha, textobueno, comentbueno, referenbuena};
+        final String[] eltextodehoy = {fecha, textobueno, comentbueno, referenbuena};
 
-        Integer [] imageId = {imagen};
+        Integer[] imageId = {imagen};
 
         CustomList adapter = new CustomList(MainActivity.this, imageId);
-        ListView list = (ListView)findViewById(R.id.list);
+        ListView list = (ListView) findViewById(R.id.list);
         list.setAdapter(adapter);
 
-CustomList2 adaptador2 = new CustomList2(MainActivity.this,eltextodehoy);
-        ListView list2 = (ListView)findViewById(R.id.list2);
+        CustomList2 adaptador2 = new CustomList2(MainActivity.this, eltextodehoy);
+        ListView list2 = (ListView) findViewById(R.id.list2);
         list2.setAdapter(adaptador2);
-
-
+lentes.moveToFirst();
+    }
     }
 
     @Override

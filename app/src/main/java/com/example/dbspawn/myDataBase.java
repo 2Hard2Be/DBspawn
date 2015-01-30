@@ -89,6 +89,7 @@ public class myDataBase extends SQLiteAssetHelper {
         String mes = ahorita.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
 
 
+
         String sqlTables =mes;
         String dia = "_id="+day;
 
@@ -118,7 +119,7 @@ public class myDataBase extends SQLiteAssetHelper {
 
 //        al terminar la busqueda retorna el cursor a la primera fila de nuevo
 
-        
+
         c.moveToFirst();
 
 
