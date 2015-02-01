@@ -2,9 +2,11 @@
 <resources>
 
     <color name="colorfondo">#010602</color>
-    <color name="colorletra">#13ec2c</color>
-    <color name="azulito">#bcc1e7</color>
+    <color name="colorletra">#a4a8e1</color>
+    <color name="azulito">#070b4b</color>
     <color name="verde">#46d857</color>
     <color name="transparente">#80bad2bd</color>
+    <color name="botonaso">#b8bbe3</color>
+
 
 </resources>

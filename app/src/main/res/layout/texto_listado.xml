@@ -13,6 +13,7 @@
         android:id="@+id/texto_listado"
         android:textColor="@color/colorletra"
         android:background="@color/colorfondo"
+
         android:textSize="32sp"
         android:gravity="left"
         android:text="sample"

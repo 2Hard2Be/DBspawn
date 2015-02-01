@@ -3,7 +3,7 @@ package com.example.dbspawn;
 import android.app.Activity;
 import android.app.ListActivity;
 
-
+import android.view.View.OnClickListener;
 import android.database.Cursor;
 
 import android.graphics.Bitmap;
@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -54,6 +55,18 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button botonsalida = (Button)findViewById(R.id.botonsalida);
+        botonsalida.setOnClickListener(new OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                finish();
+
+            }
+        });
+
 
 //        Inicializando objeto db del tip myDataBase, recordando que la superclase es SQLiteAssetHelper
 

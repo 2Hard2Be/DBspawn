@@ -8,6 +8,29 @@
     android:orientation="horizontal">
 
     <RelativeLayout
+        android:id="@+id/botones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:paddingBottom="0dp"
+        android:layout_below="@+id/textos"
+
+        >
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/botonsalida"
+
+            android:text="Cerrar"
+            android:textColorHighlight="@color/azulito"
+            android:backgroundTint="@color/botonaso"
+            android:textSize="25dp"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
         android:id="@+id/textos"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -21,15 +44,20 @@
         <ListView
             android:id="@+id/list2"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="800dp"
             android:background="@color/colorfondo"
-            android:layout_weight="1"
-            android:drawSelectorOnTop="false"/>
+            android:layout_weight="0.5"
+            android:drawSelectorOnTop="false"
+            android:divider="@color/transparente"
+            android:dividerHeight="4px"/>
 
 
 
 
     </RelativeLayout>
+
+
+
 
     <RelativeLayout
         android:id="@+id/imagenes"
@@ -47,11 +75,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorfondo"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:drawSelectorOnTop="false"/>
 
 
+
+
     </RelativeLayout>
+
+
 
 
 
