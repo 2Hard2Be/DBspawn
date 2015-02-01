@@ -20,6 +20,7 @@
         android:layout_margin="4dip"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textStyle="normal"
         />
 
 
