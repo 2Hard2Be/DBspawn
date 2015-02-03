@@ -3,6 +3,7 @@ package com.example.dbspawn;
 import android.app.Activity;
 import android.app.ListActivity;
 
+import android.content.Intent;
 import android.view.View.OnClickListener;
 import android.database.Cursor;
 
@@ -55,6 +56,8 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent trigger = new Intent(MainActivity.this,repeatingAlarm.class);
+        startService(trigger);
 
         Button botonsalida = (Button)findViewById(R.id.botonsalida);
         botonsalida.setOnClickListener(new OnClickListener(){
@@ -147,6 +150,7 @@ lentes.moveToFirst();
         super.onDestroy();
         lentes.close();
         db.close();
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
 
