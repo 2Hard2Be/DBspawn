@@ -33,12 +33,12 @@ public class notificacion extends Activity {
 //    Colocando flag para que pase al frente del history stack, no se ejecuta si ya esta corriendo
 //    ALERTA ESTO TE PUEDE DAR PROBLEMAS PUES LO TRAES DEL EJEMPLO SIN TENER CLARO PORQUE
 
-        intentalMain.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intentalMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
 //crando pendint intent para llamar al inentalMain, ATENTO QUE NO SE SABE SI FLAG_UPDATE_CURRENT
 //    ES REALMENTE NECESARIO?????
 
-        PendingIntent napoLeon = PendingIntent.getActivity(this, 0, intentalMain, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent napoLeon = PendingIntent.getActivity(this, 0, intentalMain, 0);
 
 //    colocando pendint intent napoLeon al Notificationcompat.Builder llamado constructorNotificacion, creado
 //    anteiormente

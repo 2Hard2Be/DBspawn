@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 
 import android.content.Intent;
+import android.view.MotionEvent;
 import android.view.View.OnClickListener;
 import android.database.Cursor;
 
@@ -70,6 +71,28 @@ public class MainActivity extends Activity {
             }
         });
 
+        ListView lv = (ListView)findViewById(R.id.list2);
+        lv.setOnTouchListener(new ListView.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch (action) {
+                    case MotionEvent.ACTION_DOWN:
+
+                        v.getParent().requestDisallowInterceptTouchEvent(true);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+
+                        v.getParent().requestDisallowInterceptTouchEvent(false);
+                        break;
+                }
+
+               
+                v.onTouchEvent(event);
+                return true;
+            }
+        });
 
 //        Inicializando objeto db del tip myDataBase, recordando que la superclase es SQLiteAssetHelper
 
@@ -151,6 +174,7 @@ lentes.moveToFirst();
         lentes.close();
         db.close();
         android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
     }
 
 

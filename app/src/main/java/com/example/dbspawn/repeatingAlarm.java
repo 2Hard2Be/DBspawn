@@ -58,7 +58,7 @@ public class repeatingAlarm extends IntentService {
         alarmManager.setRepeating(alarmType, alarma.getTimeInMillis(),
                 AlarmManager.INTERVAL_HALF_DAY , pendingIntentNoti);
 
-        Toast.makeText(repeatingAlarm.this, "'Den gracias a Jehová, porque él es bueno.' (Salmo 106: 1)", Toast.LENGTH_SHORT).show();
+
 
     }
 
