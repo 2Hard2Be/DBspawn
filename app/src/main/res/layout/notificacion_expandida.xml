@@ -17,6 +17,7 @@
             android:textAppearance="@style/NotificationContent"
             android:text="@string/expanded"
             android:textColor="@color/verde"
+
             android:layout_gravity="center_vertical"
             android:layout_alignParentTop="false"
             android:layout_alignParentLeft="true"

@@ -5,6 +5,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -77,11 +78,20 @@ public class notificacion extends Activity {
 //    NOTIFICATION, ANTES PROBA LA APP CREANDO EL MAIN, DE AQUI EN ADELANTE A LA PASARRAYA SOLO
 //        PARA PROBAR
 
+        //                Truco para que el texto tenga un solo color dependiendo de cual tenga el sistema
+        TypedArray colorin = getTheme().obtainStyledAttributes(new int[]{android.R.attr.textColorPrimary});
+        int colordeltexto = colorin.getColor(0, R.color.azulito);
+
+//Fin del antiguo truco
+
             Notification notificarle = constructorNotificacion.build();
 
             RemoteViews vistasdeContenido = new RemoteViews(getPackageName(), R.layout.notif);
+
+        vistasdeContenido.setTextColor(R.id.textView, colordeltexto);
             final String time = DateFormat.getTimeInstance().format(new Date()).toString();
-            final String text = getResources().getString(R.string.colapsado, texto2);
+            final String text = texto2;
+
             vistasdeContenido.setTextViewText(R.id.textView, text);
 //        alerta con este contentview tal vez se refuere a vustas de contenido
             notificarle.contentView = vistasdeContenido;
@@ -101,16 +111,40 @@ public class notificacion extends Activity {
                     }
                 }
 
+
+
                 StringBuilder referen3 = new StringBuilder();
+
 
                 referen3.append(ref1[0]).append(ref1[1]).append(ref1[2]).append(ref1[3]).append(ref1[4]).append(ref1[5]).append(ref1[7])
                         .append(ref1[8]).toString();
-
                 String referen4 = referen3.toString();
+
+                char ref2[] = new char[12];
+                referenbuena2.getChars(0, 11, ref2, 0);
+                int ii;
+                for (ii = 0; ii < ref2.length; ii++) {
+                    if (ref2[ii] == ':') {
+                        ref2[ii] = ' ';
+                    }
+
+                }
+
+        StringBuilder referen5 = new StringBuilder();
+                referen5.append(ref2[0]).append(ref2[1]).append(ref2[2]).append(" ").append(ref2[4]).append(ref2[5]).append("/").append(ref2[7])
+                        .append(ref2[8]).toString();
+
+        StringBuilder estudionumero = new StringBuilder();
+                estudionumero.append(ref2[9]).append(ref2[10]).toString();
+
+
+                String referen6 = referen5.toString();
+                String estudionumero2 = estudionumero.toString();
 
                 int imagen2 = getResources().getIdentifier(referen4, "drawable", getPackageName());
 
-                final String text2 = getResources().getString(R.string.expanded, texto2);
+                final String text2 = "El texto de ahora se basa en el estudio numero"+" "+estudionumero2+" "+"de la revista de estudio"+" "+referen6;
+
 
                 Bitmap bitimagen = BitmapFactory.decodeResource(getResources(), imagen2);
 
@@ -124,6 +158,7 @@ public class notificacion extends Activity {
                 RemoteViews expandedView =
                         new RemoteViews(getPackageName(), R.layout.notificacion_expandida);
                 expandedView.setTextViewText(R.id.Textovisto, text2);
+                expandedView.setTextColor(R.id.Textovisto, colordeltexto);
                 expandedView.setImageViewBitmap(R.id.imageView, bitimagen);
                 notificarle.bigContentView = expandedView;
                 NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);

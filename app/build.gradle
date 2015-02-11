@@ -17,7 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
-        debug {debuggable true}
+        debug {debuggable false}
     }
     sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
