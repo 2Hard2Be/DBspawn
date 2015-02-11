@@ -60,6 +60,7 @@ public class MainActivity extends Activity {
         Intent trigger = new Intent(MainActivity.this,repeatingAlarm.class);
         startService(trigger);
 
+
         Button botonsalida = (Button)findViewById(R.id.botonsalida);
         botonsalida.setOnClickListener(new OnClickListener(){
 

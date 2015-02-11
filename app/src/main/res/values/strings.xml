@@ -4,10 +4,10 @@
     <string name="app_name">EED</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="ticker">Feliz es el hombre que dia y noche lee en su ley</string>
+    <string name="ticker">“Den gracias a Jehová, porque él es bueno.” (Salmo 106: 1)</string>
     <string name="collapsed_image">Abre el examinando</string>
-    <string name="colapsado">Lee el examinando</string>
-    <string name="expanded">La verdad los libertara</string>
+    <string name="colapsado">Lee el Examinando diariamente</string>
+    <string name="expanded">“Den gracias a Jehová, porque él es bueno.” (Salmo 106: 1)</string>
      <string name="expanded_image">Examinando las Escrituras diariamente</string>
 
 </resources>

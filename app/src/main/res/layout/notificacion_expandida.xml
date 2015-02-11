@@ -12,9 +12,11 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:id="@+id/Textovisto"
             android:layout_height="wrap_content"
             android:textAppearance="@style/NotificationContent"
             android:text="@string/expanded"
+            android:textColor="@color/verde"
             android:layout_gravity="center_vertical"
             android:layout_alignParentTop="false"
             android:layout_alignParentLeft="true"
@@ -29,6 +31,7 @@
             android:layout_gravity="right|top"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
+            android:textColor="@color/transparente"
             android:id="@+id/imageView"
             android:contentDescription="@string/expanded_image" />
     </RelativeLayout>

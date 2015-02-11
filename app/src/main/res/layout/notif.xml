@@ -9,8 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/NotificationContent"
+        android:textColor="@color/verde"
         android:id="@+id/textView"
-        android:gravity="center" />
+        android:gravity="center"
+        android:text="@string/colapsado"/>
 
     <ImageView
         android:layout_width="wrap_content"
