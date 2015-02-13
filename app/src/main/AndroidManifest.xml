@@ -3,6 +3,7 @@
     package="com.example.dbspawn"
     android:versionCode="1"
     android:versionName="0.9"
+
     >
 
     <application

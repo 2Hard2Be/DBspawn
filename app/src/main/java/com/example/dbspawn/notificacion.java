@@ -143,7 +143,7 @@ public class notificacion extends Activity {
 
                 int imagen2 = getResources().getIdentifier(referen4, "drawable", getPackageName());
 
-                final String text2 = "El texto de ahora se basa en el estudio numero"+" "+estudionumero2+" "+"de la revista de estudio"+" "+referen6;
+                final String text2 = "El texto de ahora se basa en el estudio numero"+" "+estudionumero2+" "+"de la revista Atalaya"+" "+referen6;
 
 
                 Bitmap bitimagen = BitmapFactory.decodeResource(getResources(), imagen2);

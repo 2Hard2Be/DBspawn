@@ -87,33 +87,36 @@ public class myDataBase extends SQLiteAssetHelper {
         int day = ahorita.get(Calendar.DATE);
 
         String mes = ahorita.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+        int mes2 = ahorita.get(Calendar.MONTH);
+
+        String mesactual = Integer.toString(mes2);
 
         String sqlTables;
 
-switch (mes){
-    case "Enero":sqlTables = "January";
+switch (mesactual){
+    case "0":sqlTables = "January";
         break;
-    case "Febrero": sqlTables = "February";
+    case "1": sqlTables = "February";
         break;
-    case "Marzo": sqlTables = "March";
+    case "2": sqlTables = "March";
         break;
-    case "Abril": sqlTables = "April";
+    case "3": sqlTables = "April";
         break;
-    case "Mayo": sqlTables = "May";
+    case "4": sqlTables = "May";
         break;
-    case "Junio": sqlTables = "June";
+    case "5": sqlTables = "June";
         break;
-    case "Julio": sqlTables = "July";
+    case "6": sqlTables = "July";
         break;
-    case "Agosto": sqlTables = "August";
+    case "7": sqlTables = "August";
         break;
-    case "Septiembre": sqlTables = "September";
+    case "8": sqlTables = "September";
         break;
-    case "Octubre": sqlTables = "October";
+    case "9": sqlTables = "October";
         break;
-    case "Noviembre": sqlTables = "November";
+    case "10": sqlTables = "November";
         break;
-    case "Diciembre": sqlTables = "December";
+    case "11": sqlTables = "December";
         break;
     default: sqlTables = mes;
 }
